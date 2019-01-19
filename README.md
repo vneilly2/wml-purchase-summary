@@ -1,11 +1,10 @@
 # wml-purchase-summary
+
 Walmart Labs Coding Exercise
 
 The goal of this exercise is to build a “Purchase Summary” user interface (gif attached and linked here) using React.
 
 You have the option to build this in React or React Native. You have time until 5pm tomorrow for your submission.
-
- 
 
 Key UI elements:
 The “Pickup savings” tooltip

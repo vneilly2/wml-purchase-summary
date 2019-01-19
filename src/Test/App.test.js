@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { shallow } from "enzyme";
 import App from "../Components/App";
-import PurchaseSummary from "./PurchaseSummary";
+import PurchaseSummary from "../Components/PurchaseSummary";
 import { wrap } from "module";
 
 describe("App", () => {

@@ -21,8 +21,10 @@ const summaryWrapper = WrappedComponent => {
             <WrappedComponent
               key={product.id}
               price={product.price}
+              savings={product.savings}
               name={product.name}
               colors={product.colors}
+              image={product.image}
             />
           ))}
         </div>

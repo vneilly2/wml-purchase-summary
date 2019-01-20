@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import ReactDom from "react-dom";
 import { products } from "../data/Data";
-import PurchaseSummary from "../Components/PurchaseSummary";
 
 const summaryWrapper = WrappedComponent => {
   class SummaryWrapper extends Component {
@@ -20,7 +18,7 @@ const summaryWrapper = WrappedComponent => {
       return (
         <div>
           {products.map(product => (
-            <PurchaseSummary
+            <WrappedComponent
               key={product.id}
               price={product.price}
               name={product.name}
@@ -33,3 +31,5 @@ const summaryWrapper = WrappedComponent => {
   }
   return SummaryWrapper;
 };
+
+export default summaryWrapper;

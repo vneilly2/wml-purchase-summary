@@ -1,14 +1,35 @@
 import React, { Component } from "react";
 import ReactDom from "react-dom";
-import Data from "../data/Data";
+import { products } from "../data/Data";
 import PurchaseSummary from "../Components/PurchaseSummary";
 
-const summaryWrapper = props => {
-  return (
-    <div>
-      <PurchaseSummary data={Data.products} />
-    </div>
-  );
-};
+const summaryWrapper = WrappedComponent => {
+  class SummaryWrapper extends Component {
+    constructor(props) {
+      super(props);
 
-export default summaryWrapper;
+      this.state = {
+        showItemDetails: false,
+        showApplyPromo: false
+      };
+
+      this.handleToggleShow = this.handleToggleShow.bind(this);
+    }
+    handleToggleShow(e) {}
+    render() {
+      return (
+        <div>
+          {products.map(product => (
+            <PurchaseSummary
+              key={product.id}
+              price={product.price}
+              name={product.name}
+              colors={product.colors}
+            />
+          ))}
+        </div>
+      );
+    }
+  }
+  return SummaryWrapper;
+};

@@ -22,7 +22,7 @@ class ToolTip extends Component {
     }
   }
   render() {
-    let { toolTipMessage, toolTipPosition } = this.props;
+    let { message, position } = this.props;
     console.log("from ToolTip: ", this.props);
     return (
       <span
@@ -35,8 +35,8 @@ class ToolTip extends Component {
         {this.props.children}
         <span className="tooltip" onMouseLeave={this.handleToggleToolTip}>
           {this.state.displayTooltip && (
-            <div className={`tooltip-bubble tooltip-${toolTipPosition}`}>
-              <div className="tooltip-message">{toolTipMessage}</div>
+            <div className={`tooltip-bubble tooltip-${position}`}>
+              <div className="tooltip-message">{message}</div>
             </div>
           )}
         </span>

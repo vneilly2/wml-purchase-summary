@@ -28,6 +28,13 @@ const PurchaseSummary = props => {
           <li>{savings}</li>
         </ul>
       </div>
+      <div className="purchase-tax">
+        <ul className="tax-and-fees">
+          <li>Est. taxes &amp; fees</li>
+          <li>$8.91</li>
+        </ul>
+        <figcaption>(Based on 94085)</figcaption>
+      </div>
     </div>
   );
 };

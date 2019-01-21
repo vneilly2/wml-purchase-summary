@@ -22,20 +22,24 @@ class ToolTip extends Component {
     }
   }
   render() {
-    let { toolTipMessage, toolTipPosition } = this.props;
+    let { message, position } = this.props;
+    console.log("from ToolTip: ", this.props);
     return (
       <span
-        className="tooltip"
+        className="tooltip-trigger"
         onClick={this.handleToggleToolTip}
         onKeyDown={this.handleKeyPress}
         role="button"
         tabIndex="0"
       >
-        {this.state.displayTooltip && (
-          <div className={`tooltip-bubble tooltip-${toolTipPosition}`}>
-            <div className="tooltip-message">{toolTipMessage}</div>
-          </div>
-        )}
+        {this.props.children}
+        <span className="tooltip" onMouseLeave={this.handleToggleToolTip}>
+          {this.state.displayTooltip && (
+            <div className={`tooltip-bubble tooltip-${position}`}>
+              <div className="tooltip-message">{message}</div>
+            </div>
+          )}
+        </span>
       </span>
     );
   }

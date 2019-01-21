@@ -3,6 +3,7 @@ import SummaryWrapper from "../HOC/SummaryWrapper";
 import ToolTip from "../Components/ToolTip";
 
 const PurchaseSummary = props => {
+  console.log(props);
   let { price, savings } = props;
   return (
     <div className="purchase-summary-container">
@@ -17,10 +18,22 @@ const PurchaseSummary = props => {
       <div className="pup-savings">
         <ul className="savings">
           <li>
-            <ToolTip />
+            <ToolTip
+              message={"Picking up your order in the store helps"}
+              position={"bottom"}
+            >
+              Pickup Savings
+            </ToolTip>
           </li>
           <li>{savings}</li>
         </ul>
+      </div>
+      <div className="purchase-tax">
+        <ul className="tax-and-fees">
+          <li>Est. taxes &amp; fees</li>
+          <li>$8.91</li>
+        </ul>
+        <figcaption>(Based on 94085)</figcaption>
       </div>
     </div>
   );
